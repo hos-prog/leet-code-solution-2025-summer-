@@ -1,0 +1,16 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        words = s.split()
+        sorted_words = sorted(words, key=lambda word: int([c for c in word if c.isdigit()][0]))
+        #sorted words do find the dighit and use askey to sort
+        #new do they join the list and rstrip do remove the digit from the string 
+        new = ' '.join(word.rstrip('1234567890') for word in sorted_words)
+        return new
+
+        
+   
+
+
+
+
+        
