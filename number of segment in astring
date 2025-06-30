@@ -1,0 +1,15 @@
+class Solution:
+    def countSegments(self, s: str) -> int:
+        word=""
+        new=[]
+        for I in s:
+            if I !=" ":
+                word+=I
+            else:
+                if word:
+                    new.append(word)
+                    word=""
+        if word:
+            new.append(word)
+            
+        return len(new)
