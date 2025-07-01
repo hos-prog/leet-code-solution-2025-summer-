@@ -1,0 +1,20 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words):
+        morse_code = [
+            ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", 
+            ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", 
+            "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."
+        ]
+        
+        t = set()
+        
+        for i in words:
+            m= ''.join(morse_code[ord(j) - ord('a')] for j in i)
+            t.add(m)
+        
+        return len(t)
+            
+            
+            
+            
+        
