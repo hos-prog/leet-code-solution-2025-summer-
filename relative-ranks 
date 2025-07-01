@@ -1,0 +1,22 @@
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        ranks = score[:]
+        temp = score[:]
+        m = 0
+        medals = ["Gold Medal", "Silver Medal", "Bronze Medal"]
+
+        for _ in range(len(score)):
+            if m < 3:
+                max_score = max(temp)
+                idx = score.index(max_score)
+                ranks[idx] = medals[m]
+                temp.remove(max_score)
+                m += 1
+            else:
+                max_score = max(temp)
+                idx = score.index(max_score)
+                ranks[idx] = str(m + 1)
+                temp.remove(max_score)
+                m += 1
+
+        return ranks
