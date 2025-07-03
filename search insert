@@ -1,0 +1,13 @@
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            for i in range(len(nums)):
+                if nums[i]>target:
+                    return i
+                elif max(nums)<target:
+                    return len(nums)
+        else:
+            for I in range(len(nums)):
+                if nums[I]==target:
+                    return I
+        
