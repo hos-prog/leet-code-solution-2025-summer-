@@ -1,0 +1,21 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        keyboard=("qwertyuiop","asdfghjkl","zxcvbnm")     
+        output=[]
+        def is_word(w,k):
+            for I in w.lower():
+                if I not in k:
+                    return False
+            return True
+
+        
+        for w in words:
+            for k in keyboard:
+                if is_word(w,k):
+                    output.append(w)
+                    break
+                
+        
+        return output        
+                
+        
